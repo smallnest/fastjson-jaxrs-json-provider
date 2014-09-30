@@ -16,6 +16,27 @@ According to different JAX-RS implementations such as CXF, Jersey, maybe you use
 
 You can `init` this provider instance with a FastJsonConfig object which is used to configure FastJson features, SerializeConfig, ParserConfig and SerializeFilter. Any parameters can be null and will be default.
  
+#### Maven
+*stable version: 0.1.0*
+
+```
+<dependency>
+	<groupId>com.colobu</groupId>
+	<artifactId>fastjson-jaxrs-json-provider</artifactId>
+	<version>0.1.0</version>
+<dependency>
+```
+
+*snapshot version: 0.2.0-0.2.0-SNAPSHOT*
+```
+<dependency>
+	<groupId>com.colobu</groupId>
+	<artifactId>fastjson-jaxrs-json-provider</artifactId>
+	<version>0.2.0-SNAPSHOT</version>
+<dependency>
+```
+
+
 ### Jersey configuration
 Please check the test and maybe you need to create a FastJsonFeature to override MessageBodyReader and MessageBodyWriter.
 
