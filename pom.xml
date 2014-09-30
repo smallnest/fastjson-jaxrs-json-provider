@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.colobu</groupId>
+	<artifactId>fastjson-jaxrs-json-provider</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>fastjson-jaxrs-json-provider</name>
+	<description>a JAX-RS entity provider for https://github.com/alibaba/fastjson</description>
+	<url>https://github.com/smallnest/fastjson-jaxrs-json-provider/</url>
+	<organization>
+		<name>colobu</name>
+		<url>http://colobu.com</url>
+	</organization>
+	<developers>
+		<developer>
+			<id>smallnest</id>
+			<name>smallnest</name>
+			<email>smallnest@gmail.com</email>
+		</developer>
+	</developers>
+	<scm>
+		<connection>scm:git:https://smallnest@github.com/smallnest/fastjson-jaxrs-json-provider.git</connection>
+		<url>https://github.com/smallnest/fastjson-jaxrs-json-provider.git</url>
+	</scm>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<junit.version>4.11</junit.version>
+		<fastjson.version>1.1.41</fastjson.version>
+		<!-- Need Jersey+Jetty for testing -->
+		<jersey.version>2.12</jersey.version>
+		<jersey.test.version>2.12</jersey.test.version>
+		<!-- Needed to enable jax-rs 2.0 usage under OSGi -->
+		<javax.ws.rs.version>[1.1.1,2.1)</javax.ws.rs.version>
+		<sortpom.version>2.3.0</sortpom.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<!-- JAX-RS 2.x has different artifact-id, "javax.ws.rs-api" -->
+			<artifactId>javax.ws.rs-api</artifactId>
+			<version>2.0</version>
+			<!-- <artifactId>jsr311-api</artifactId> <version>1.1.1</version> -->
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>${fastjson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
+			<version>${jersey.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>${jersey.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.test-framework.providers</groupId>
+			<artifactId>jersey-test-framework-provider-jdk-http</artifactId>
+			<version>${jersey.test.version}</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.google.code.sortpom</groupId>
+				<artifactId>maven-sortpom-plugin</artifactId>
+				<version>${sortpom.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>com.google.code.maven-replacer-plugin</groupId>
+				<artifactId>replacer</artifactId>
+				<version>1.5.3</version>
+				<executions>
+					<execution>
+						<id>process-packageVersion</id>
+						<phase>process-sources</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
