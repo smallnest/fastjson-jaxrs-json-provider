@@ -5,7 +5,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class IOUtils {
-	private final static int BUFFER_SIZE = 4096;
 
 	/**
 	 * read a String from an InputStream object.

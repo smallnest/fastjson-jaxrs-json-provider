@@ -2,8 +2,6 @@ package com.colobu.test;
 
 import java.util.Date;
 
-import com.alibaba.fastjson.annotation.JSONType;
-
 public class Teacher {
 
 	private Long id;
