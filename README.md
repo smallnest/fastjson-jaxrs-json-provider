@@ -17,22 +17,22 @@ According to different JAX-RS implementations such as CXF, Jersey, maybe you use
 You can `init` this provider instance with a FastJsonConfig object which is used to configure FastJson features, SerializeConfig, ParserConfig and SerializeFilter. Any parameters can be null and will be default.
  
 #### Maven
-*stable version: 0.1.0*
+*stable version: 0.2.0*
 
 ```
 <dependency>
 	<groupId>com.colobu</groupId>
 	<artifactId>fastjson-jaxrs-json-provider</artifactId>
-	<version>0.1.0</version>
+	<version>0.2.0</version>
 <dependency>
 ```
 
-*snapshot version: 0.2.0-0.2.0-SNAPSHOT*
+*snapshot version: 0.2.1-SNAPSHOT*
 ```
 <dependency>
 	<groupId>com.colobu</groupId>
 	<artifactId>fastjson-jaxrs-json-provider</artifactId>
-	<version>0.2.0-SNAPSHOT</version>
+	<version>0.2.1-SNAPSHOT</version>
 <dependency>
 ```
 
