@@ -8,7 +8,7 @@
 	</parent>
 	<groupId>com.colobu</groupId>
 	<artifactId>fastjson-jaxrs-json-provider</artifactId>
-	<version>0.2.1-SNAPSHOT</version>
+	<version>0.3.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>fastjson-jaxrs-json-provider</name>
 	<description>a JAX-RS entity provider for https://github.com/alibaba/fastjson</description>
@@ -56,10 +56,10 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<junit.version>4.11</junit.version>
-		<fastjson.version>1.1.41</fastjson.version>
+		<fastjson.version>1.2.7</fastjson.version>
 		<!-- Need Jersey+Jetty for testing -->
-		<jersey.version>2.12</jersey.version>
-		<jersey.test.version>2.12</jersey.test.version>
+		<jersey.version>2.21</jersey.version>
+		<jersey.test.version>2.21</jersey.test.version>
 		<!-- Needed to enable jax-rs 2.0 usage under OSGi -->
 		<javax.ws.rs.version>[1.1.1,2.1)</javax.ws.rs.version>
 		<sortpom.version>2.3.0</sortpom.version>

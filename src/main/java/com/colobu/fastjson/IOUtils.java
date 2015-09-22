@@ -15,7 +15,7 @@ public class IOUtils {
 	public static String inputStreamToString(InputStream in) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(in));
 		StringBuffer buffer = new StringBuffer();
-		String line = "";
+		String line;
 		while ((line = br.readLine()) != null) {
 			buffer.append(line);
 		}
