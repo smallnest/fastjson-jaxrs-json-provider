@@ -4,6 +4,7 @@ fastjson-jaxrs-json-provider
 A JAX-RS entity provider for [fastjson](https://github.com/alibaba/fastjson)
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.colobu/fastjson-jaxrs-json-provider/badge.svg)](https://github.com/smallnest/fastjson-jaxrs-json-provider)
+[![Drone Build Status](https://drone.io/github.com/smallnest/fastjson-jaxrs-json-provider/status.png)](https://github.com/smallnest/fastjson-jaxrs-json-provider)
 
 
 ### What is JAXRS provider?
@@ -50,12 +51,12 @@ You can `init` this provider instance with a FastJsonConfig object which is used
 <dependency>
 ```
 
-*snapshot version: 0.2.1-SNAPSHOT*
+*snapshot version: 0.3.1-SNAPSHOT*
 ```
 <dependency>
 	<groupId>com.colobu</groupId>
 	<artifactId>fastjson-jaxrs-json-provider</artifactId>
-	<version>0.2.1-SNAPSHOT</version>
+	<version>0.3.1-SNAPSHOT</version>
 <dependency>
 ```
 
