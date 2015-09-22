@@ -15,6 +15,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * JAX-RS Provider for fastjson.
@@ -27,6 +29,9 @@ public class FastJsonProvider implements MessageBodyReader<Object>, MessageBodyW
 	private boolean annotated = false;
 	private String[] scanpackages = null;
 	private Class<?>[] clazzes = null;
+
+	@javax.ws.rs.core.Context
+	javax.ws.rs.core.UriInfo uriInfo;
 
 	protected FastJsonConfig fastJsonConfig = new FastJsonConfig(new SerializeConfig(), null, null, new ParserConfig(), null);
 
@@ -218,6 +223,17 @@ public class FastJsonProvider implements MessageBodyReader<Object>, MessageBodyW
 	public void writeTo(Object t, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType, MultivaluedMap<String, Object> httpHeaders,
 			OutputStream entityStream) throws IOException, WebApplicationException {
 		SerializeFilter filter = null;
+        
+        if(uriInfo != null &&  uriInfo.getQueryParameters().containsKey("pretty")) {
+			if (fastJsonConfig.serializerFeatures == null)
+				fastJsonConfig.serializerFeatures = new  SerializerFeature[]{SerializerFeature.PrettyFormat};
+            else {
+                List<SerializerFeature> serializerFeatures = Arrays.asList(fastJsonConfig.serializerFeatures);
+                serializerFeatures.add(SerializerFeature.PrettyFormat);
+                fastJsonConfig.serializerFeatures = serializerFeatures.toArray(new SerializerFeature[]{});
+            }
+		}
+
 		if (fastJsonConfig.serializeFilters != null)
 			filter = fastJsonConfig.serializeFilters.get(type);
 		String jsonStr = toJSONString(t, filter, fastJsonConfig.serializerFeatures);

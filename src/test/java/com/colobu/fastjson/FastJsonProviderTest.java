@@ -1,20 +1,17 @@
 package com.colobu.fastjson;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
-import java.util.Date;
-
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.core.Application;
-
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
 import org.glassfish.jersey.test.TestProperties;
 import org.junit.Test;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.core.Application;
+import java.util.Date;
+
+import static org.junit.Assert.*;
 
 public class FastJsonProviderTest extends JerseyTest {
 
@@ -53,6 +50,18 @@ public class FastJsonProviderTest extends JerseyTest {
 		assertTrue(user.indexOf("createdOn") > 0);
 		assertTrue(user.indexOf("\"id\":12345") > 0);
 		assertTrue(user.indexOf("\"name\":\"smallnest\"") > 0);
+	}
+
+	@Test
+	public void testWriteToWithPretty() {
+        System.out.println("@@@@@Test Pretty");
+        final String user = target("user").queryParam("pretty", "true").request().accept("application/json").get(String.class);
+		// {"createdOn":1412036891919,"id":12345,"name":"smallnest"}]
+		assertTrue(user.indexOf("createdOn") > 0);
+		assertTrue(user.indexOf("\"id\":12345") > 0);
+		assertTrue(user.indexOf("\"name\":\"smallnest\"") > 0);
+        assertTrue(user.indexOf("\n\t") > 0);
+
 	}
 
 	@Test

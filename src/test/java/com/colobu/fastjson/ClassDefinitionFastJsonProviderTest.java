@@ -1,24 +1,23 @@
 package com.colobu.fastjson;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
-import java.util.Date;
-
-import javax.ws.rs.GET;
-import javax.ws.rs.InternalServerErrorException;
-import javax.ws.rs.Path;
-import javax.ws.rs.core.Application;
-
+import com.colobu.test.Teacher;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
 import org.glassfish.jersey.test.TestProperties;
 import org.junit.Test;
 
-import com.colobu.test.Teacher;
+import javax.ws.rs.GET;
+import javax.ws.rs.InternalServerErrorException;
+import javax.ws.rs.Path;
+import javax.ws.rs.core.Application;
+import java.util.Date;
 
+import static org.junit.Assert.*;
+
+/*
+Only handles specific classes by pass class type array to FastJsonProvider's constructor.
+ */
 public class ClassDefinitionFastJsonProviderTest extends JerseyTest {
 
 	@Path("teacher")
