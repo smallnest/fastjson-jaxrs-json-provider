@@ -3,9 +3,9 @@ fastjson-jaxrs-json-provider
 
 A JAX-RS entity provider for [fastjson](https://github.com/alibaba/fastjson)
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.colobu/fastjson-jaxrs-json-provider/badge.svg)](https://github.com/smallnest/fastjson-jaxrs-json-provider)
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.colobu/fastjson-jaxrs-json-provider/badge.svg](https://github.com/smallnest/fastjson-jaxrs-json-provider)
-[![GitHub release](https://img.shields.io/github/tag/smallnest/fastjson-jaxrs-json-provider.svg)[https://github.com/smallnest/fastjson-jaxrs-json-provider/tags]
+
 ### What is JAXRS provider?
 Entity payload, if present in an received HTTP message, is passed to JAX-RS container as an input stream. The stream may, for example, contain data represented as a plain text, XML or JSON document. 
 However, in many JAX-RS components that process these inbound data, such as resource methods or client responses, the JAX-RS API user can access the inbound entity as an arbitrary Java object that is created from the content of the input stream based on the representation type information. 
@@ -40,13 +40,13 @@ According to different JAX-RS implementations such as CXF, Jersey, maybe you use
 You can `init` this provider instance with a FastJsonConfig object which is used to configure FastJson features, SerializeConfig, ParserConfig and SerializeFilter. Any parameters can be null and will be default.
  
 #### Maven
-*stable version: 0.2.0*
+*stable version: 0.3.0*
 
 ```
 <dependency>
 	<groupId>com.colobu</groupId>
 	<artifactId>fastjson-jaxrs-json-provider</artifactId>
-	<version>0.2.0</version>
+	<version>0.3.0</version>
 <dependency>
 ```
 
