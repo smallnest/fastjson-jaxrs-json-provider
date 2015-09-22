@@ -223,7 +223,7 @@ public class FastJsonProvider implements MessageBodyReader<Object>, MessageBodyW
 	public void writeTo(Object t, Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType, MultivaluedMap<String, Object> httpHeaders,
 			OutputStream entityStream) throws IOException, WebApplicationException {
 		SerializeFilter filter = null;
-        
+
         if(uriInfo != null &&  uriInfo.getQueryParameters().containsKey("pretty")) {
 			if (fastJsonConfig.serializerFeatures == null)
 				fastJsonConfig.serializerFeatures = new  SerializerFeature[]{SerializerFeature.PrettyFormat};
