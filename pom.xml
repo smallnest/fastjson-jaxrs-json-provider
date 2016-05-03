@@ -8,7 +8,7 @@
 	</parent>
 	<groupId>com.colobu</groupId>
 	<artifactId>fastjson-jaxrs-json-provider</artifactId>
-	<version>0.3.1-SNAPSHOT</version>
+	<version>0.3.1</version>
 	<packaging>jar</packaging>
 	<name>fastjson-jaxrs-json-provider</name>
 	<description>a JAX-RS entity provider for https://github.com/alibaba/fastjson</description>
@@ -92,18 +92,19 @@
 			<groupId>org.glassfish.jersey.containers</groupId>
 			<artifactId>jersey-container-servlet</artifactId>
 			<version>${jersey.version}</version>
-			<scope>provided</scope>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.glassfish.jersey.core</groupId>
 			<artifactId>jersey-client</artifactId>
 			<version>${jersey.version}</version>
-			<scope>provided</scope>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.glassfish.jersey.test-framework.providers</groupId>
 			<artifactId>jersey-test-framework-provider-jdk-http</artifactId>
 			<version>${jersey.test.version}</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 	<build>
