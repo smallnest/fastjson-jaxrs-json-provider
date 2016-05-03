@@ -47,7 +47,7 @@ You can `init` this provider instance with a FastJsonConfig object which is used
 <dependency>
 	<groupId>com.colobu</groupId>
 	<artifactId>fastjson-jaxrs-json-provider</artifactId>
-	<version>0.3.0</version>
+	<version>0.3.1</version>
 <dependency>
 ```
 
@@ -56,7 +56,7 @@ You can `init` this provider instance with a FastJsonConfig object which is used
 <dependency>
 	<groupId>com.colobu</groupId>
 	<artifactId>fastjson-jaxrs-json-provider</artifactId>
-	<version>0.3.1-SNAPSHOT</version>
+	<version>0.3.2-SNAPSHOT</version>
 <dependency>
 ```
 
