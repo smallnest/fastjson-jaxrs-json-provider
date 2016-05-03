@@ -8,7 +8,7 @@
 	</parent>
 	<groupId>com.colobu</groupId>
 	<artifactId>fastjson-jaxrs-json-provider</artifactId>
-	<version>0.3.1</version>
+	<version>0.3.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>fastjson-jaxrs-json-provider</name>
 	<description>a JAX-RS entity provider for https://github.com/alibaba/fastjson</description>
