@@ -38,7 +38,8 @@ public class FastJsonProviderTest extends JerseyTest {
 		enable(TestProperties.DUMP_ENTITY);
 
 		ResourceConfig config = new ResourceConfig();
-		config.register(new FastJsonFeature()).register(FastJsonProvider.class);
+		//config.register(new FastJsonFeature()).register(FastJsonProvider.class);
+		config.register(new FastJsonFeature()).register(new FastJsonProvider().setPretty(true));
 		config.packages("com.colobu.fastjson");
 		return config;
 	}

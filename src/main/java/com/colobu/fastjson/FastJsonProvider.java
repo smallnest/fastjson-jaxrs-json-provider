@@ -30,8 +30,7 @@ public class FastJsonProvider implements MessageBodyReader<Object>, MessageBodyW
 	private String[] scanpackages = null;
 	private Class<?>[] clazzes = null;
 
-	@javax.ws.rs.core.Context
-	javax.ws.rs.core.UriInfo uriInfo;
+	protected boolean pretty;
 
 	protected FastJsonConfig fastJsonConfig = new FastJsonConfig(new SerializeConfig(), null, null, new ParserConfig(), null);
 
@@ -80,6 +79,12 @@ public class FastJsonProvider implements MessageBodyReader<Object>, MessageBodyW
 		return this;
 	}
 
+
+	// Set pretty format
+	public FastJsonProvider setPretty(boolean p) {
+		this.pretty = p;
+		return this;
+	}
 	
 	/**
 	 * Check whether a class can be serialized or deserialized. It can check
@@ -224,7 +229,7 @@ public class FastJsonProvider implements MessageBodyReader<Object>, MessageBodyW
 			OutputStream entityStream) throws IOException, WebApplicationException {
 		SerializeFilter filter = null;
 
-        if(uriInfo != null &&  uriInfo.getQueryParameters().containsKey("pretty")) {
+        if(pretty) {
 			if (fastJsonConfig.serializerFeatures == null)
 				fastJsonConfig.serializerFeatures = new  SerializerFeature[]{SerializerFeature.PrettyFormat};
             else {
